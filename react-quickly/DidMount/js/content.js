@@ -1,4 +1,9 @@
 class Content extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("constructor is called");
+  }
+
   componentWillMount() {
     console.log("componentWillMount is triggered");
     console.log(ReactDOM.findDOMNode(this));
@@ -11,6 +16,7 @@ class Content extends React.Component {
   }
 
   render() {
+    console.log("Rendering in the class...");
     return React.createElement("div", null);
   }
 }
