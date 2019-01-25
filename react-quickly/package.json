@@ -1,11 +1,10 @@
 {
-  "name": "SimpleDigitalClock",
+  "name": "react-quickly",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-clock": "./node_modules/.bin/babel ./jsx -d ./js -w"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
