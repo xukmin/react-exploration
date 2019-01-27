@@ -1,6 +1,8 @@
 class SliderButtons extends React.Component {
   constructor(props) {
     super(props);
+    this.handleSlide = this.handleSlide.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       sliderValue: 0
     }
@@ -22,11 +24,11 @@ class SliderButtons extends React.Component {
   }
 
   componentDidMount() {
-    $('#slider').on('slider', this.handleSlide);
+    $('#slider').on('slide', this.handleSlide);
   }
 
   componentWillUnmount() {
-    $('#slider').off('slider', this.handleSlide);
+    $('#slider').off('slide', this.handleSlide);
   }
 
   render() {
