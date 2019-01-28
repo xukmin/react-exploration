@@ -4,9 +4,9 @@ const LoadWebsite = Component => {
   class _LoadWebsite extends React.Component {
     constructor(props) {
       super(props);
-      this.handleClick = this.handleClick.bind(this);
       this.state = {
-        label: 'Run'
+        label: 'Run',
+        handleClick: this.handleClick.bind(this)
       };
     }
 
@@ -15,7 +15,8 @@ const LoadWebsite = Component => {
     }
 
     handleClick(event) {
-      var iframe = document.getElementById('frame').src = this.getUrl();
+      console.log('I am clicked');
+      document.getElementById('frame').src = this.getUrl();
     }
 
     componentDidMount() {
