@@ -23,8 +23,8 @@ class Tooltip extends React.Component {
     };
     return <div style={{display: 'inline'}}>
       <span style={{color: 'blue'}} 
-        onMouseEnter={this.toggle} 
-        onMouseOut={this.toggle}>
+        onClick={this.toggle} 
+        onDoubleClick={this.toggle}>
         {this.props.children}
       </span>
       <div className="tooltip bottom" 
