@@ -1,4 +1,4 @@
-let dataUrl = '/Users/minxu/github/react-exploration/react-quickly/Menu/menus.json';
+let dataUrl = './menus.json';
 
 ReactDOM.render(
   <Menu data-url={dataUrl}/>,
