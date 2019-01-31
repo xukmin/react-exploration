@@ -9,7 +9,7 @@ ReactDOM.render(React.createElement(
   "was published in 2017. It's awesome!",
   React.createElement(
     Tooltip,
-    { text: "Really? test the length" },
+    { text: "Really? test the length", allowToggleWithMouseInteraction: false, allowToggleWithClick: true, positionWhereShowText: "top" },
     " Test one more case "
   ),
   "It's good!"
