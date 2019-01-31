@@ -12,7 +12,7 @@ class Timer extends React.Component {
   }
 }
 */
-const Timer = function (props) {
+const Timer = props => {
   if (props.timeLeft == 0) {
     document.getElementById('end-of-time').play();
   }
