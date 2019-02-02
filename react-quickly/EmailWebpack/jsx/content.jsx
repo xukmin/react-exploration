@@ -1,3 +1,6 @@
+const React = require('react');
+const ReactDOM = require('react-dom');
+
 class Content extends React.Component {
   constructor(props) {
     super(props);
@@ -30,3 +33,5 @@ class Content extends React.Component {
     </div>
   }
 }
+
+module.exports = Content
