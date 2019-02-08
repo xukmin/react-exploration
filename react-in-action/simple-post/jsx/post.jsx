@@ -5,8 +5,9 @@ class Post extends React.Component {
   render() {
     return <div className='post'>
       <h2 className='postAuthor' id={this.props.id}>{this.props.user}
+        <span className='postBody'>{this.props.content}</span>
+        {this.props.children}
       </h2>
-      <span className='postBody'>{this.props.content}</span>
     </div>
   }
 }

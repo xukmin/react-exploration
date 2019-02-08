@@ -131,7 +131,46 @@ const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/
 
 const Post = __webpack_require__(/*! ./post.jsx */ "./jsx/post.jsx");
 
-ReactDOM.render(React.createElement(Post, null), document.getElementById('root'));
+const Comment = __webpack_require__(/*! ./comment.jsx */ "./jsx/comment.jsx");
+
+ReactDOM.render(React.createElement(Post, null, React.createElement(Comment, {
+  id: 2,
+  user: "bob",
+  content: " commented: wow! how cool!"
+})), document.getElementById('root'));
+
+/***/ }),
+
+/***/ "./jsx/comment.jsx":
+/*!*************************!*\
+  !*** ./jsx/comment.jsx ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+class Comment extends React.Component {
+  render() {
+    return React.createElement("div", {
+      className: "comment"
+    }, React.createElement("h2", {
+      className: "commentAuthor"
+    }, this.props.user, React.createElement("span", {
+      className: "commentContent"
+    }, this.props.content)));
+  }
+
+}
+
+Comment.propTypes = {
+  id: PropTypes.number.isRequired,
+  content: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired
+};
+module.exports = Comment;
 
 /***/ }),
 
@@ -153,9 +192,9 @@ class Post extends React.Component {
     }, React.createElement("h2", {
       className: "postAuthor",
       id: this.props.id
-    }, this.props.user), React.createElement("span", {
+    }, this.props.user, React.createElement("span", {
       className: "postBody"
-    }, this.props.content));
+    }, this.props.content), this.props.children));
   }
 
 }
