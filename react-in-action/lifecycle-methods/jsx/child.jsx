@@ -7,6 +7,14 @@ class ChildComponent extends React.Component {
     console.log('ChildComponent: state');
   }
 
+  componentWillMount() {
+    console.log('ChildComponent: componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('ChildComponent: componentDidMount');
+  }
+
   render() {
     console.log('ChildComponent: render');
     return <div>

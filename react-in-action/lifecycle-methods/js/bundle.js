@@ -120,6 +120,14 @@ class ChildComponent extends React.Component {
     console.log('ChildComponent: state');
   }
 
+  componentWillMount() {
+    console.log('ChildComponent: componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('ChildComponent: componentDidMount');
+  }
+
   render() {
     console.log('ChildComponent: render');
     return React.createElement("div", null, "Name: ", this.props.name);
@@ -156,10 +164,19 @@ const ChildComponent = __webpack_require__(/*! ./child.jsx */ "./jsx/child.jsx")
 class ParentComponent extends React.Component {
   constructor(props) {
     super(props);
+    console.log('ParentComponent: state');
     this.state = {
       text: ''
     };
     this.onInputChange = this.onInputChange.bind(this);
+  }
+
+  componentWillMount() {
+    console.log('ParentComponent: componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('ParentComponent: componentDidMount');
   }
 
   onInputChange(event) {
@@ -167,17 +184,9 @@ class ParentComponent extends React.Component {
       text: event.target.value
     });
   }
-  /*
-  render() {
-    return [
-      <h2 key="h2">Learn about rendering and lifecycle methods!</h2>,
-      <ChildComponent key="ChildComponent" name={this.state.text}/>
-    ]
-  }
-  */
-
 
   render() {
+    console.log('ParentComponent: render');
     return [React.createElement("h2", {
       key: "h2"
     }, "Learn about rendering and lifecycle methods!"), React.createElement("input", {
@@ -191,6 +200,13 @@ class ParentComponent extends React.Component {
   }
 
 }
+
+ParentComponent.defaultProps = function () {
+  console.log('ParentComponent: defaultProps');
+  return {
+    true: false
+  };
+}();
 
 module.exports = ParentComponent;
 
