@@ -128,6 +128,30 @@ class ChildComponent extends React.Component {
     console.log('ChildComponent: componentDidMount');
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log('ChildComponent: componentWillReceiveProps()');
+    console.log('nextProps: ', nextProps);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('ChildComponent: shouldComponentUpdate()');
+    console.log('nextProps: ', nextProps);
+    console.log('nextState: ', nextState);
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log('ChildComponent: componentWillUpdate()');
+    console.log('nextProps: ', nextProps);
+    console.log('nextState: ', nextState);
+  }
+
+  componentDidUpdate(previousProps, previousState) {
+    console.log('ChildComponent: componentDidUpdate()');
+    console.log('previousProps: ', previousProps);
+    console.log('previousState: ', previousState);
+  }
+
   render() {
     console.log('ChildComponent: render');
     return React.createElement("div", null, "Name: ", this.props.name);
