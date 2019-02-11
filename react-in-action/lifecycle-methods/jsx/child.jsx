@@ -5,6 +5,10 @@ class ChildComponent extends React.Component {
   constructor(props) {
     super(props);
     console.log('ChildComponent: state');
+    this.state = {
+      name: 'Mark'
+    };
+    this.oops = this.oops.bind(this);
   }
 
   componentWillMount() {
@@ -43,11 +47,22 @@ class ChildComponent extends React.Component {
     console.log('ChildComponent: componentWillUnmount');
   }
 
+  oops() {
+    console.log('ChildComponent: oops()');
+    this.setState({
+      oops: true
+    });
+  }
+
   render() {
     console.log('ChildComponent: render');
-    return <div>
-      Name: {this.props.name}
-    </div>
+    if (this.state.oops) {
+      throw new Error('Something went wrong');
+    }
+    return [
+      <div key="name">Name: {this.props.name}</div>,
+      <button key="error" onClick={this.oops}>Create error</button>
+    ];
   }
 }
 

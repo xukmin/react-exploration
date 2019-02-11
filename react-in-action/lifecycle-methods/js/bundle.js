@@ -118,6 +118,10 @@ class ChildComponent extends React.Component {
   constructor(props) {
     super(props);
     console.log('ChildComponent: state');
+    this.state = {
+      name: 'Mark'
+    };
+    this.oops = this.oops.bind(this);
   }
 
   componentWillMount() {
@@ -156,9 +160,26 @@ class ChildComponent extends React.Component {
     console.log('ChildComponent: componentWillUnmount');
   }
 
+  oops() {
+    console.log('ChildComponent: oops()');
+    this.setState({
+      oops: true
+    });
+  }
+
   render() {
     console.log('ChildComponent: render');
-    return React.createElement("div", null, "Name: ", this.props.name);
+
+    if (this.state.oops) {
+      throw new Error('Something went wrong');
+    }
+
+    return [React.createElement("div", {
+      key: "name"
+    }, "Name: ", this.props.name), React.createElement("button", {
+      key: "error",
+      onClick: this.oops
+    }, "Create error")];
   }
 
 }
@@ -241,8 +262,27 @@ class ParentComponent extends React.Component {
     });
   }
 
+  componentDidCatch(err, errorInfo) {
+    console.log('ParentComponent: componentDidCatch()');
+    console.error(err);
+    console.error(errorInfo);
+    this.setState({
+      err,
+      errorInfo
+    });
+  }
+
   render() {
     console.log('ParentComponent: render');
+
+    if (this.state.err) {
+      return React.createElement("details", {
+        style: {
+          whitespace: 'pre-wrap'
+        }
+      }, this.state.error && this.state.error.toString(), React.createElement("br", null), this.state.errorInfo.componentStack);
+    }
+
     return [React.createElement("h2", {
       key: "h2"
     }, "Learn about rendering and lifecycle methods!"), React.createElement("input", {

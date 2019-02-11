@@ -54,8 +54,24 @@ class ParentComponent extends React.Component {
     });
   }
 
+  componentDidCatch(err, errorInfo) {
+    console.log('ParentComponent: componentDidCatch()');
+    console.error(err);
+    console.error(errorInfo);
+    this.setState({err, errorInfo});
+  }
+
   render() {
     console.log('ParentComponent: render');
+    if (this.state.err) {
+      return (
+        <details style={{ whitespace: 'pre-wrap' }}>
+          {this.state.error && this.state.error.toString()}
+          <br/>
+          {this.state.errorInfo.componentStack}
+        </details>
+      );
+  }
     return [
       <h2 key="h2">Learn about rendering and lifecycle methods!</h2>,
         <input key="input" value={this.state.text}
