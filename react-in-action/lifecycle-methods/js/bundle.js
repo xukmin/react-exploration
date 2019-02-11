@@ -152,6 +152,10 @@ class ChildComponent extends React.Component {
     console.log('previousState: ', previousState);
   }
 
+  componentWillUnmount() {
+    console.log('ChildComponent: componentWillUnmount');
+  }
+
   render() {
     console.log('ChildComponent: render');
     return React.createElement("div", null, "Name: ", this.props.name);
@@ -225,6 +229,10 @@ class ParentComponent extends React.Component {
     console.log('ParentComponent: componentDidUpdate()');
     console.log('previousProps: ', previousProps);
     console.log('previousState: ', previousState);
+  }
+
+  componentWillUnmount() {
+    console.log('ParentComponent: componentWillUnmount');
   }
 
   onInputChange(event) {

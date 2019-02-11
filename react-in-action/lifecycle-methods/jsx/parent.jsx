@@ -44,6 +44,10 @@ class ParentComponent extends React.Component {
     console.log('previousState: ', previousState);
   }
 
+  componentWillUnmount() {
+    console.log('ParentComponent: componentWillUnmount');
+  }
+
   onInputChange(event) {
     this.setState({
       text: event.target.value

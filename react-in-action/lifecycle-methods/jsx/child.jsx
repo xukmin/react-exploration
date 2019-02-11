@@ -39,6 +39,10 @@ class ChildComponent extends React.Component {
     console.log('previousState: ', previousState);
   }
 
+  componentWillUnmount() {
+    console.log('ChildComponent: componentWillUnmount');
+  }
+
   render() {
     console.log('ChildComponent: render');
     return <div>
