@@ -120,6 +120,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -193,14 +195,14 @@ class ChildComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 }
 
-ChildComponent.propTypes = {
+_defineProperty(ChildComponent, "propTypes", {
   name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-};
+});
 
-ChildComponent.defaultProps = function () {
+_defineProperty(ChildComponent, "defaultProps", function () {
   console.log('ChildComponent: defaultProps');
   return {};
-}();
+}());
 
 /* harmony default export */ __webpack_exports__["default"] = (ChildComponent);
 
@@ -220,6 +222,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _child_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./child.jsx */ "./jsx/child.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -311,12 +315,12 @@ class ParentComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 }
 
-ParentComponent.defaultProps = function () {
+_defineProperty(ParentComponent, "defaultProps", function () {
   console.log('ParentComponent: defaultProps');
   return {
     true: false
   };
-}();
+}());
 
 /* harmony default export */ __webpack_exports__["default"] = (ParentComponent);
 

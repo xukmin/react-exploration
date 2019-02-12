@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class ChildComponent extends Component {
+  static propTypes = {
+    name: PropTypes.string
+  };
+
+  static defaultProps = (function(){
+    console.log('ChildComponent: defaultProps');
+    return {};
+  })();
+
   constructor(props) {
     super(props);
     console.log('ChildComponent: state');
@@ -65,14 +74,5 @@ class ChildComponent extends Component {
     ];
   }
 }
-
-ChildComponent.propTypes = {
-  name: PropTypes.string
-}
-
-ChildComponent.defaultProps = (function(){
-  console.log('ChildComponent: defaultProps');
-  return {};
-})()
 
 export default ChildComponent;

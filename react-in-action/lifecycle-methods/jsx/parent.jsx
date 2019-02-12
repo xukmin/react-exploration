@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import ChildComponent from './child.jsx';
 
 class ParentComponent extends Component {
+  static defaultProps = (function() {
+    console.log('ParentComponent: defaultProps');
+    return {
+      true: false
+    };
+  })();
+
   constructor(props) {
     super(props);
     console.log('ParentComponent: state');
@@ -81,12 +88,5 @@ class ParentComponent extends Component {
   }
   
 }
-
-ParentComponent.defaultProps = (function() {
-  console.log('ParentComponent: defaultProps');
-  return {
-    true: false
-  };
-})();
 
 export default ParentComponent;
