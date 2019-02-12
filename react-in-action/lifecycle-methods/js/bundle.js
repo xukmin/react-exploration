@@ -90,16 +90,20 @@
 /*!*********************!*\
   !*** ./jsx/app.jsx ***!
   \*********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _parent_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parent.jsx */ "./jsx/parent.jsx");
 
-const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 
-const ParentComponent = __webpack_require__(/*! ./parent.jsx */ "./jsx/parent.jsx");
 
-ReactDOM.render(React.createElement(ParentComponent, null), document.getElementById('container'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_parent_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('container'));
 
 /***/ }),
 
@@ -107,14 +111,19 @@ ReactDOM.render(React.createElement(ParentComponent, null), document.getElementB
 /*!***********************!*\
   !*** ./jsx/child.jsx ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
-const PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 
-class ChildComponent extends React.Component {
+
+class ChildComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
     console.log('ChildComponent: state');
@@ -174,9 +183,9 @@ class ChildComponent extends React.Component {
       throw new Error('Something went wrong');
     }
 
-    return [React.createElement("div", {
+    return [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: "name"
-    }, "Name: ", this.props.name), React.createElement("button", {
+    }, "Name: ", this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       key: "error",
       onClick: this.oops
     }, "Create error")];
@@ -185,7 +194,7 @@ class ChildComponent extends React.Component {
 }
 
 ChildComponent.propTypes = {
-  name: PropTypes.string
+  name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
 };
 
 ChildComponent.defaultProps = function () {
@@ -193,7 +202,7 @@ ChildComponent.defaultProps = function () {
   return {};
 }();
 
-module.exports = ChildComponent;
+/* harmony default export */ __webpack_exports__["default"] = (ChildComponent);
 
 /***/ }),
 
@@ -201,16 +210,21 @@ module.exports = ChildComponent;
 /*!************************!*\
   !*** ./jsx/parent.jsx ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _child_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./child.jsx */ "./jsx/child.jsx");
 
-const PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 
-const ChildComponent = __webpack_require__(/*! ./child.jsx */ "./jsx/child.jsx");
 
-class ParentComponent extends React.Component {
+
+class ParentComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
     console.log('ParentComponent: state');
@@ -276,20 +290,20 @@ class ParentComponent extends React.Component {
     console.log('ParentComponent: render');
 
     if (this.state.err) {
-      return React.createElement("details", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("details", {
         style: {
           whitespace: 'pre-wrap'
         }
-      }, this.state.error && this.state.error.toString(), React.createElement("br", null), this.state.errorInfo.componentStack);
+      }, this.state.error && this.state.error.toString(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.errorInfo.componentStack);
     }
 
-    return [React.createElement("h2", {
+    return [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
       key: "h2"
-    }, "Learn about rendering and lifecycle methods!"), React.createElement("input", {
+    }, "Learn about rendering and lifecycle methods!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
       key: "input",
       value: this.state.text,
       onChange: this.onInputChange
-    }), React.createElement(ChildComponent, {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_child_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: "ChildComponent",
       name: this.state.text
     })];
@@ -304,7 +318,7 @@ ParentComponent.defaultProps = function () {
   };
 }();
 
-module.exports = ParentComponent;
+/* harmony default export */ __webpack_exports__["default"] = (ParentComponent);
 
 /***/ }),
 

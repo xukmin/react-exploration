@@ -1,7 +1,7 @@
-const React = require('react');
-const PropTypes = require('prop-types');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class ChildComponent extends React.Component {
+class ChildComponent extends Component {
   constructor(props) {
     super(props);
     console.log('ChildComponent: state');
@@ -75,4 +75,4 @@ ChildComponent.defaultProps = (function(){
   return {};
 })()
 
-module.exports = ChildComponent;
+export default ChildComponent;

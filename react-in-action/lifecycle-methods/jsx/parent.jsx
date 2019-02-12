@@ -1,8 +1,8 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const ChildComponent = require('./child.jsx');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ChildComponent from './child.jsx';
 
-class ParentComponent extends React.Component {
+class ParentComponent extends Component {
   constructor(props) {
     super(props);
     console.log('ParentComponent: state');
@@ -89,4 +89,4 @@ ParentComponent.defaultProps = (function() {
   };
 })();
 
-module.exports = ParentComponent;
+export default ParentComponent;

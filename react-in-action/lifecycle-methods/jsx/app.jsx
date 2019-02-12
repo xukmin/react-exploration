@@ -1,6 +1,6 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const ParentComponent = require('./parent.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ParentComponent from './parent.jsx';
 
 ReactDOM.render(
   <ParentComponent/>,
