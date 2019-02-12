@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ParentComponent from './parent.jsx';
+import ParentComponent from './parent';
 
 ReactDOM.render(
   <ParentComponent/>,

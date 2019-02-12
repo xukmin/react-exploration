@@ -99,11 +99,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _parent_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parent.jsx */ "./jsx/parent.jsx");
+/* harmony import */ var _parent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parent */ "./jsx/parent.jsx");
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_parent_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('container'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_parent__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('container'));
 
 /***/ }),
 
@@ -221,7 +221,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _child_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./child.jsx */ "./jsx/child.jsx");
+/* harmony import */ var _child__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./child */ "./jsx/child.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -307,7 +307,7 @@ class ParentComponent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       key: "input",
       value: this.state.text,
       onChange: this.onInputChange
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_child_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_child__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: "ChildComponent",
       name: this.state.text
     })];

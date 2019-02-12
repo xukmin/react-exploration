@@ -6,6 +6,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: '#sourcemap',
+  resolve: { extensions: ['.js', '.jsx'] },
   module: {
     rules: [
       { test: /\.css$/, loader: 'style-loader!css-loader'},

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ChildComponent from './child.jsx';
+import ChildComponent from './child'
 
 class ParentComponent extends Component {
   static defaultProps = (function() {
