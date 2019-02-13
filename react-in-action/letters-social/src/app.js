@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Loader from './components/Loader';
 import Welcome from './components/Welcome';
+import Ad from './components/Ad';
 
 class App extends Component {
   constructor(props) {
@@ -31,8 +32,18 @@ class App extends Component {
             <Welcome />
             <div>
               <button className="block">
-                Load more posts
+                Load more posts!
               </button>
+            </div>
+            <div>
+              <Ad 
+                url="https://ifelse.io/book"
+                imageUrl="/static/assets/ads/ria.png"
+              />
+              <Ad
+                url="https://ifelse.io/book"
+                imageUrl="/static/assets/ads/orly.jpg"
+              />
             </div>
           </div>
         )}

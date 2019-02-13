@@ -25972,7 +25972,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Loader */ "./src/components/Loader.js");
 /* harmony import */ var _components_Welcome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Welcome */ "./src/components/Welcome.js");
+/* harmony import */ var _components_Ad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Ad */ "./src/components/Ad.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -25999,7 +26001,13 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       className: "home"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Welcome__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "block"
-    }, "Load more posts"))));
+    }, "Load more posts!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Ad__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      url: "https://ifelse.io/book",
+      imageUrl: "/static/assets/ads/ria.png"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Ad__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      url: "https://ifelse.io/book",
+      imageUrl: "/static/assets/ads/orly.jpg"
+    }))));
   }
 
 }
@@ -26010,6 +26018,44 @@ _defineProperty(App, "propTypes", {
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./src/components/Ad.js":
+/*!******************************!*\
+  !*** ./src/components/Ad.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const Ad = props => {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ad"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    target: "_blank",
+    rel: "noreferrer noopener",
+    href: props.url
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "img-responsive",
+    src: props.imageUrl,
+    alt: "React in Action by Mark Thomas | Manning Publications"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "ads by Letters"));
+};
+
+Ad.propTypes = {
+  imageUrl: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  url: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+/* harmony default export */ __webpack_exports__["default"] = (Ad);
 
 /***/ }),
 
