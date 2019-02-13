@@ -1,3 +1,12 @@
+const webpack = require('webpack');
+const config = require('config');
+
+const GLOBALS = {
+  'process.env': {
+    ENDPOINT: JSON.stringify(config.get('ENDPOINT'))
+  }
+};
+
 module.exports = {
   mode: 'development',
   entry: './src/index',
@@ -7,6 +16,9 @@ module.exports = {
   },
   devtool: '#sourcemap',
   resolve: { extensions: ['.js', '.jsx'] },
+  plugins: [
+    new webpack.DefinePlugin(GLOBALS)
+  ],
   module: {
     rules: [
       {
