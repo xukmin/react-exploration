@@ -25815,13 +25815,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app */ "./src/app.js");
-/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/styles.scss */ "./src/styles/styles.scss");
-/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _shared_crash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/crash */ "./src/shared/crash.js");
+/* harmony import */ var _shared_crash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_shared_crash__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _shared_service_worker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shared/service-worker */ "./src/shared/service-worker.js");
+/* harmony import */ var _shared_service_worker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_shared_service_worker__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/styles.scss */ "./src/styles/styles.scss");
+/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_scss__WEBPACK_IMPORTED_MODULE_5__);
 
 
+
+
+ //import './shared/vendor';
 
 
 Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_app__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('app'));
+
+/***/ }),
+
+/***/ "./src/shared/crash.js":
+/*!*****************************!*\
+  !*** ./src/shared/crash.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+if (false) {}
+
+/***/ }),
+
+/***/ "./src/shared/service-worker.js":
+/*!**************************************!*\
+  !*** ./src/shared/service-worker.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+if ('serviceWorker' in navigator && "development" === 'production') {
+  navigator.serviceWorker.register('/static/service-worker.js');
+}
 
 /***/ }),
 

@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "mapbox": "^1.0.0-beta10",
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
