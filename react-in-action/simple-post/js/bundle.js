@@ -129,15 +129,104 @@ const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 
+const CommentBox = __webpack_require__(/*! ./comment-box.jsx */ "./jsx/comment-box.jsx");
+
+const data = {
+  post: {
+    id: 123,
+    content: 'What we hope ever to do with ease, we must first learn to do' + 'with diligence. -- Samuel Johnson',
+    user: 'Min Xu'
+  },
+  comments: [{
+    id: 0,
+    user: 'David',
+    content: 'such. win.'
+  }, {
+    id: 1,
+    user: 'Haley',
+    content: 'Love it.'
+  }, {
+    id: 2,
+    user: 'Peter',
+    content: 'Who was Samuel Johnson?'
+  }, {
+    id: 3,
+    user: 'Mitchell',
+    content: '@Peter get off Letters and do your homework'
+  }, {
+    id: 4,
+    user: 'Peter',
+    content: '@Mitchell ok :P'
+  }]
+};
+ReactDOM.render(React.createElement(CommentBox, {
+  comments: data.comments,
+  post: data.post
+}), document.getElementById('root'));
+
+/***/ }),
+
+/***/ "./jsx/comment-box.jsx":
+/*!*****************************!*\
+  !*** ./jsx/comment-box.jsx ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
 const Post = __webpack_require__(/*! ./post.jsx */ "./jsx/post.jsx");
 
 const Comment = __webpack_require__(/*! ./comment.jsx */ "./jsx/comment.jsx");
 
-ReactDOM.render(React.createElement(Post, null, React.createElement(Comment, {
-  id: 2,
-  user: "bob",
-  content: " commented: wow! how cool!"
-})), document.getElementById('root'));
+const CreateComment = __webpack_require__(/*! ./create-comment.jsx */ "./jsx/create-comment.jsx");
+
+class CommentBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: this.props.comments
+    };
+    this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
+  }
+
+  handleCommentSubmit(comment) {
+    const comments = this.state.comments;
+    comment.id = Date.now();
+    const newComments = comments.concat([comment]);
+    this.setState({
+      comments: newComments
+    });
+  }
+
+  render() {
+    return React.createElement("div", {
+      className: "commentBox"
+    }, React.createElement(Post, {
+      id: this.props.post.id,
+      content: this.props.post.content,
+      user: this.props.post.user
+    }), this.state.comments.map(function (comment) {
+      return React.createElement(Comment, {
+        key: comment.id,
+        id: comment.id,
+        content: comment.content,
+        user: comment.user
+      });
+    }), React.createElement(CreateComment, {
+      onCommentSubmit: this.handleCommentSubmit
+    }));
+  }
+
+}
+
+CommentBox.propTypes = {
+  post: PropTypes.object,
+  comments: PropTypes.arrayOf(PropTypes.object)
+};
+module.exports = CommentBox;
 
 /***/ }),
 
@@ -171,6 +260,92 @@ Comment.propTypes = {
   user: PropTypes.string.isRequired
 };
 module.exports = Comment;
+
+/***/ }),
+
+/***/ "./jsx/create-comment.jsx":
+/*!********************************!*\
+  !*** ./jsx/create-comment.jsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+class CreateComment extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: '',
+      user: ''
+    };
+    this.handleUserChange = this.handleUserChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleUserChange(event) {
+    this.setState({
+      user: event.target.value
+    });
+    /*
+    this.setState(() => ({
+      user: event.target.value
+    }));
+    */
+  }
+
+  handleTextChange(event) {
+    this.setState({
+      content: event.target.value
+    });
+    /*
+    this.setState(() => ({
+      content: event.target.value
+    }));
+    */
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.onCommentSubmit({
+      user: this.state.user.trim(),
+      content: this.state.content.trim()
+    });
+    this.setState(() => ({
+      user: '',
+      content: ''
+    }));
+  }
+
+  render() {
+    return React.createElement("form", {
+      className: "createComment",
+      onSubmit: this.handleSubmit
+    }, React.createElement("input", {
+      type: "text",
+      placeholder: "Your name",
+      value: this.state.user,
+      onChange: this.handleUserChange
+    }), React.createElement("input", {
+      type: "text",
+      placeholder: "Thoughts?",
+      value: this.state.content,
+      onChange: this.handleTextChange
+    }), React.createElement("button", {
+      type: "submit"
+    }, "Post"));
+  }
+
+}
+
+CreateComment.propTypes = {
+  onCommentSubmit: PropTypes.func.isRequired,
+  content: PropTypes.string
+};
+module.exports = CreateComment;
 
 /***/ }),
 
